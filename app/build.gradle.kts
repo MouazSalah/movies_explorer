@@ -48,6 +48,19 @@ android {
         }
     }
 
+
+    flavorDimensions("flavors")
+    productFlavors {
+        create("staging") {
+            dimension = "flavors"
+            applicationId = "com.areeb.tmdb"
+            resValue("string", "app_name", "Movie Explorer")
+            buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+            buildConfigField("String", "API_KEY", "\"169edd5ba67dab5a976067e49fad78d0\"")
+            buildConfigField("String", "API_ACCESS_TOKEN", "\"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNjllZGQ1YmE2N2RhYjVhOTc2MDY3ZTQ5ZmFkNzhkMCIsInN1YiI6IjVkZmI4ZjI4ZDFhODkzMDAxMjgyYzNjYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5Aadm0G5V8KH-c5TQRwz-KcC2-k_A4LNmdVTRjKp5dM\"")
+        }
+    }
+
     dependencies {
         //Test
         testImplementation("junit:junit:4.13.2")
@@ -121,4 +134,9 @@ android {
         implementation("androidx.room:room-ktx:2.5.2")
         kapt("androidx.room:room-compiler:2.5.2")
     }
+}
+dependencies {
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 }

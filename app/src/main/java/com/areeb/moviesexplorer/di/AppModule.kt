@@ -1,5 +1,6 @@
-package com.areeb.moviesexplorer
+package com.areeb.moviesexplorer.di
 
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,4 +17,7 @@ class AppModule {
     @Provides
     fun provideIoDispatcher(): CoroutineDispatcher = Dispatchers.IO
 
+    @Singleton
+    @Provides
+    fun provideGson(): Gson = Gson()
 }
