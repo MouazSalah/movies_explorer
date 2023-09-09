@@ -3,6 +3,7 @@ package com.areeb.moviesexplorer.network.remote
 import com.areeb.moviesexplorer.data.MoviesResponse
 import com.areeb.moviesexplorer.network.remote.response.ErrorResponse
 import com.areeb.moviesexplorer.network.remote.response.NetworkResponse
+import kotlinx.coroutines.flow.Flow
 import retrofit2.http.*
 interface MoviesWebServices {
 
@@ -12,7 +13,7 @@ interface MoviesWebServices {
   }
 
     @GET(GET_ALL_MOVIES)
-    suspend fun getAllMovies(@QueryMap param: HashMap<String, String?>): NetworkResponse<List<MoviesResponse>, ErrorResponse>
+    suspend fun getAllMovies(@QueryMap param: HashMap<String, String?>): Flow<List<MoviesResponse>>
 
 
     @GET(GET_MOVIE_DETAILS)

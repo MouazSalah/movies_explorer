@@ -5,7 +5,6 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "movies")
 data class MovieItem (
 
 	@field:SerializedName("id")
@@ -77,7 +76,4 @@ data class MovieItem (
 	val productionCountryName: String? = null,
 
 	val spokenLanguage: String? = null,
-) {
-	@Ignore
-	constructor() : this(null)
-}
+)

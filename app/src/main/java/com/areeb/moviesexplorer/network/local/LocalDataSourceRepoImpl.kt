@@ -7,6 +7,6 @@ class LocalDataSourceRepoImpl @Inject constructor(private val moviesDao: MoviesD
 
     override suspend fun loadMovies(): List<MoviesResponse> = moviesDao.loadMovies()
 
-    override suspend fun insertMovies(movies: List<MoviesResponse>) = moviesDao.insertMovies(movies)
+    override suspend fun insertMovies(moviesList : List<MoviesResponse>) = moviesDao.insertMovies(moviesList)
 
 }

@@ -1,6 +1,10 @@
 package com.areeb.moviesexplorer.di
 
+import com.areeb.moviesexplorer.data.MoviesResponse
+import com.areeb.moviesexplorer.network.remote.FlowTypeAdapter
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
