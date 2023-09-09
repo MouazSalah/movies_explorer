@@ -83,12 +83,6 @@ data class MoviesResponse (
 	@field:SerializedName("production_companies")
 	val productionCompanies: List<ProductionCompaniesItem?>? = null
 )
-{
-		// Primary constructor
-		// Add @Ignore to other constructors you want Room to ignore
-		@Ignore
-		constructor() : this(null)
-	}
 
 
 
