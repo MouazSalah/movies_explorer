@@ -1,4 +1,4 @@
-package com.areeb.moviesexplorer.data
+package com.areeb.moviesexplorer.ui.main.movieslist.data
 
 import androidx.room.Entity
 import androidx.room.Ignore

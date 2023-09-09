@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.areeb.moviesexplorer.BuildConfig
 import com.areeb.moviesexplorer.extesnion.showLogMessage
+import com.areeb.moviesexplorer.network.local.LocalUseCase
+import com.areeb.moviesexplorer.ui.main.movieslist.data.MovieResponseItem
 import com.areeb.moviesexplorer.ui.main.movieslist.data.MoviesListParams
 import com.areeb.moviesexplorer.ui.main.movieslist.domain.MoviesListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,29 +15,27 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MoviesListViewModel @Inject constructor( private val moviesListUseCase: MoviesListUseCase) : ViewModel()
-{
-    private var moviesListParams = MoviesListParams(apiKey = BuildConfig.API_KEY)
+class MoviesListViewModel @Inject constructor(private val moviesListUseCase: MoviesListUseCase) : ViewModel() {
+
+    var moviesListParams = MoviesListParams(apiKey = BuildConfig.API_KEY, page = 1)
+    var totalPages: Int = 1
 
     private val _moviesListState = MutableStateFlow<MoviesListState>(MoviesListState.Loading)
     val moviesListState: StateFlow<MoviesListState> = _moviesListState
 
     init {
-        fetchMovies(moviesListParams) // You can initialize the data loading in the constructor if needed.
+        fetchMovies()
     }
 
-    private fun fetchMovies(params: MoviesListParams) {
+    fun fetchMovies() {
         viewModelScope.launch {
             try {
-                val movies = moviesListUseCase(params)
-                "movies viewModel success = ${movies.toString()}".showLogMessage()
-
-                _moviesListState.value = MoviesListState.Success(movies)
+                val movies = moviesListUseCase(moviesListParams)
+                totalPages = movies.totalPages ?: 1
+                _moviesListState.value = MoviesListState.Success(movies.results as ArrayList<MovieResponseItem>)
             } catch (e: Exception) {
-                "movies viewModel exception = ${e.message}".showLogMessage()
                 _moviesListState.value = MoviesListState.Error(e.message ?: "An error occurred")
             }
         }
     }
-
 }

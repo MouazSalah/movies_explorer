@@ -56,6 +56,7 @@ android {
             applicationId = "com.areeb.tmdb"
             resValue("string", "app_name", "Movie Explorer")
             buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+            buildConfigField("String", "BASE_IMAGES_URL", "\"https://image.tmdb.org/t/p/original/\"")
             buildConfigField("String", "API_KEY", "\"169edd5ba67dab5a976067e49fad78d0\"")
             buildConfigField("String", "API_ACCESS_TOKEN", "\"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNjllZGQ1YmE2N2RhYjVhOTc2MDY3ZTQ5ZmFkNzhkMCIsInN1YiI6IjVkZmI4ZjI4ZDFhODkzMDAxMjgyYzNjYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5Aadm0G5V8KH-c5TQRwz-KcC2-k_A4LNmdVTRjKp5dM\"")
         }

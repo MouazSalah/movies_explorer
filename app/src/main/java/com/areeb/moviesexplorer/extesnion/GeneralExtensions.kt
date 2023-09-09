@@ -1,5 +1,7 @@
 package com.areeb.moviesexplorer.extesnion
 
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.areeb.moviesexplorer.core.HashMapParams
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
@@ -7,6 +9,19 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import timber.log.Timber
+
+
+inline fun <reified T : AppCompatActivity> Fragment.castToActivity(
+    callback: (T?) -> Unit,
+): T? {
+    return if (requireActivity() is T) {
+        callback(requireActivity() as T)
+        requireActivity() as T
+    } else {
+        callback(null)
+        null
+    }
+}
 
 fun CoroutineScope.delayWithAction(
     delayMillis: Long,

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/quantum_grey200"
+        android:padding="16dp">
+
+        <!-- Movie Poster -->
+        <ImageView
+            android:id="@+id/imageViewPoster"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250sdp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="H,1:1"
+            tools:src="@drawable/ic_logo" />
+
+        <!-- Movie Title -->
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Between Us"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_primary"
+            android:layout_marginTop="16dp" />
+
+        <!-- Movie Overview -->
+        <TextView
+            android:id="@+id/textViewOverview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_primary"
+            tools:text="Overview: Elodie and Laetitia live in close love and dream of having a child..."
+            android:layout_marginTop="16dp" />
+
+        <!-- Movie Release Date -->
+        <TextView
+            android:id="@+id/textViewReleaseDate"
+            android:layout_width="match_parent"
+            android:textColor="@color/color_primary"
+            android:layout_height="wrap_content"
+            tools:text="Release Date: 2023-07-12"
+            android:layout_marginTop="8dp" />
+
+        <!-- Movie Genres -->
+        <TextView
+            android:id="@+id/textViewGenres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Genres: Drama"
+            android:textColor="@color/color_primary"
+            android:layout_marginTop="8dp" />
+
+        <!-- Movie Runtime -->
+        <TextView
+            android:id="@+id/textViewRuntime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_primary"
+            tools:text="Runtime: 90 minutes"
+            android:layout_marginTop="8dp" />
+
+        <!-- Movie IMDb Rating -->
+        <TextView
+            android:id="@+id/textViewIMDbRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_primary"
+            tools:text="IMDb Rating: 6.2"
+            android:layout_marginTop="8dp" />
+
+        <!-- Movie Production Companies -->
+        <TextView
+            android:id="@+id/textViewProductionCompanies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_primary"
+            tools:text="Production Companies: CB Partners"
+            android:layout_marginTop="8dp" />
+
+        <!-- Movie Production Countries -->
+        <TextView
+            android:id="@+id/textViewProductionCountries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_primary"
+            tools:text="Production Countries: France"
+            android:layout_marginTop="8dp" />
+
+        <!-- Movie Status -->
+        <TextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Status: Released"
+            android:textColor="@color/color_primary"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+

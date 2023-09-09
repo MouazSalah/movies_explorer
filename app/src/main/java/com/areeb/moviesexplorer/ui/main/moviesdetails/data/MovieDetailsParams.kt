@@ -1,14 +1,14 @@
-package com.areeb.moviesexplorer.ui.main.movieslist.data
+package com.areeb.moviesexplorer.ui.main.moviesdetails.data
 
 import com.areeb.moviesexplorer.core.HashMapParams
 import com.google.gson.annotations.SerializedName
 
-data class MoviesListParams(
+data class MovieDetailsParams(
     @SerializedName("api_key")
     var apiKey: String? = null,
 
-    @SerializedName("page")
-    var page: Int? = null
+    @SerializedName("movieId")
+    var movieId: String? = null
 ) : HashMapParams {
     override fun dataClass(): Any = this
 }

@@ -1,10 +1,10 @@
 package com.areeb.moviesexplorer.network.local
 
-import com.areeb.moviesexplorer.data.MoviesResponse
+import com.areeb.moviesexplorer.ui.main.movieslist.data.MovieResponseItem
 
 interface IMoviesILocalDataSourceRepo {
-    suspend fun loadMovies(): List<MoviesResponse>
+    suspend fun loadMovies(): List<MovieResponseItem>
 
-    suspend fun insertMovies(years: List<MoviesResponse>)
+    suspend fun insertMovies(years: List<MovieResponseItem>)
 
 }

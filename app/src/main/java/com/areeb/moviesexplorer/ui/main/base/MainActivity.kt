@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedListener {
 
     private var navController: NavController? = null
-    private val mBinding by lazy(LazyThreadSafetyMode.NONE) {
+    val mBinding by lazy(LazyThreadSafetyMode.NONE) {
         ActivityMainBinding.inflate(layoutInflater)
     }
 

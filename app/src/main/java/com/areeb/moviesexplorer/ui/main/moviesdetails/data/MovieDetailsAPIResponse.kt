@@ -1,15 +1,8 @@
-package com.areeb.moviesexplorer.data
+package com.areeb.moviesexplorer.ui.main.moviesdetails.data
 
-import androidx.room.Entity
-import androidx.room.Ignore
-import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "movies")
-data class MoviesResponse (
-
-	@field:SerializedName("id")
-	@PrimaryKey var id: Int? = null,
+data class MovieDetailsAPIResponse(
 
 	@field:SerializedName("original_language")
 	val originalLanguage: String? = null,
@@ -29,8 +22,17 @@ data class MoviesResponse (
 	@field:SerializedName("revenue")
 	val revenue: Int? = null,
 
+	@field:SerializedName("genres")
+	val genres: List<GenresItem?>? = null,
+
 	@field:SerializedName("popularity")
-	val popularity: Double? = null,
+	val popularity: Any? = null,
+
+	@field:SerializedName("production_countries")
+	val productionCountries: List<ProductionCountriesItem?>? = null,
+
+	@field:SerializedName("id")
+	val id: Int? = null,
 
 	@field:SerializedName("vote_count")
 	val voteCount: Int? = null,
@@ -50,11 +52,20 @@ data class MoviesResponse (
 	@field:SerializedName("poster_path")
 	val posterPath: String? = null,
 
+	@field:SerializedName("spoken_languages")
+	val spokenLanguages: List<SpokenLanguagesItem?>? = null,
+
+	@field:SerializedName("production_companies")
+	val productionCompanies: List<ProductionCompaniesItem?>? = null,
+
 	@field:SerializedName("release_date")
 	val releaseDate: String? = null,
 
 	@field:SerializedName("vote_average")
-	val voteAverage: Double? = null,
+	val voteAverage: Any? = null,
+
+	@field:SerializedName("belongs_to_collection")
+	val belongsToCollection: Any? = null,
 
 	@field:SerializedName("tagline")
 	val tagline: String? = null,
@@ -66,25 +77,17 @@ data class MoviesResponse (
 	val homepage: String? = null,
 
 	@field:SerializedName("status")
-	val status: String? = null,
-
-	@field:SerializedName("genres")
-	var genres: List<GenresItem?>? = null,
-
-	@field:SerializedName("belongs_to_collection")
-	val belongsToCollection: BelongsToCollection? = null,
-
-	@field:SerializedName("production_countries")
-	val productionCountries: List<ProductionCountriesItem?>? = null,
-
-	@field:SerializedName("spoken_languages")
-	val spokenLanguages: List<SpokenLanguagesItem?>? = null,
-
-	@field:SerializedName("production_companies")
-	val productionCompanies: List<ProductionCompaniesItem?>? = null
+	val status: String? = null
 )
 
+data class GenresItem(
 
+	@field:SerializedName("name")
+	val name: String? = null,
+
+	@field:SerializedName("id")
+	val id: Int? = null
+)
 
 data class SpokenLanguagesItem(
 
@@ -110,7 +113,7 @@ data class ProductionCountriesItem(
 data class ProductionCompaniesItem(
 
 	@field:SerializedName("logo_path")
-	val logoPath: String? = null,
+	val logoPath: Any? = null,
 
 	@field:SerializedName("name")
 	val name: String? = null,
@@ -120,28 +123,4 @@ data class ProductionCompaniesItem(
 
 	@field:SerializedName("origin_country")
 	val originCountry: String? = null
-)
-
-data class GenresItem(
-
-	@field:SerializedName("name")
-	val name: String? = null,
-
-	@field:SerializedName("id")
-	val id: Int? = null
-)
-
-data class BelongsToCollection(
-
-	@field:SerializedName("backdrop_path")
-	val backdropPath: String? = null,
-
-	@field:SerializedName("name")
-	val name: String? = null,
-
-	@field:SerializedName("id")
-	val id: Int? = null,
-
-	@field:SerializedName("poster_path")
-	val posterPath: String? = null
 )

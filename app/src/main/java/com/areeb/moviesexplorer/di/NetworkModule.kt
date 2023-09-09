@@ -3,7 +3,6 @@ package com.areeb.moviesexplorer.di
 import android.content.Context
 import com.areeb.moviesexplorer.network.remote.MovieInterceptor
 import com.areeb.moviesexplorer.network.remote.MoviesWebServices
-import com.areeb.moviesexplorer.network.remote.response.NetworkResponseAdapterFactory
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.intuit.sdp.BuildConfig
@@ -33,7 +32,7 @@ class NetworkModule {
     ): OkHttpClient {
         val okHttpClientBuilder: OkHttpClient.Builder = OkHttpClient.Builder()
         okHttpClientBuilder.addInterceptor(moviesInterceptor)
-        if (BuildConfig.DEBUG) {
+        if (com.areeb.moviesexplorer.BuildConfig.DEBUG) {
             okHttpClientBuilder.addInterceptor(loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY))
                 .addInterceptor(
                     ChuckerInterceptor.Builder(context)
@@ -56,7 +55,6 @@ class NetworkModule {
             .baseUrl(com.areeb.moviesexplorer.BuildConfig.BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(NetworkResponseAdapterFactory())
             .build()
     }
 

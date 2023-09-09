@@ -1,5 +1,6 @@
 package com.areeb.moviesexplorer.network.remote
 
+import com.areeb.moviesexplorer.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
@@ -19,5 +20,5 @@ class MovieInterceptor @Inject constructor() : Interceptor {
 
 fun buildAPIRequest(chain: Interceptor.Chain): Request.Builder {
 
-    return chain.request().newBuilder().addHeader("Authorization", "BuildC.API_ACCESS_TOKEN")
+    return chain.request().newBuilder().addHeader("Authorization", "Bearer ${BuildConfig.API_ACCESS_TOKEN}")
 }
