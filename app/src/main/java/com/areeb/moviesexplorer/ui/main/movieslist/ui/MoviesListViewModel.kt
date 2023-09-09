@@ -28,7 +28,11 @@ class MoviesListViewModel @Inject constructor(private val moviesListUseCase: Mov
     }
 
     fun fetchMovies() {
+
         viewModelScope.launch {
+            _moviesListState.value = MoviesListState.Loading
+            _moviesListState.value = MoviesListState.Success(moviesListUseCase.getCashedMovies() as ArrayList<MovieResponseItem>)
+
             try {
                 val movies = moviesListUseCase(moviesListParams)
                 totalPages = movies.totalPages ?: 1

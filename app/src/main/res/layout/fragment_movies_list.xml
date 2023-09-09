@@ -22,4 +22,23 @@
         tools:itemCount="2"
         tools:listitem="@layout/item_movie" />
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/shimmer_layout"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <include layout="@layout/shimmer_item_movie" />
+        <include layout="@layout/shimmer_item_movie" />
+        <include layout="@layout/shimmer_item_movie" />
+        <include layout="@layout/shimmer_item_movie" />
+        <include layout="@layout/shimmer_item_movie" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

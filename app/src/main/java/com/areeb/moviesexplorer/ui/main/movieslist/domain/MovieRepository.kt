@@ -24,6 +24,10 @@ class MovieRepositoryImpl @Inject constructor(
 
         return remoteDataSource.getMoviesList(params)
     }
+    override suspend fun getMoviesFromRoom(): List<MovieResponseItem> {
+        return localDataSource.loadMovies()
+    }
+
 
     override suspend fun getMovieDetails(params: MovieDetailsParams): MovieDetailsAPIResponse {
         return remoteDataSource.getMovieDetails(params)

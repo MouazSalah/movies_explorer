@@ -9,6 +9,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="grey_color">#565B6E</color>
     <color name="quantum_grey200">#eeeeee</color>
+    <color name="color_dark_grey">#808080</color>
 
 </resources>

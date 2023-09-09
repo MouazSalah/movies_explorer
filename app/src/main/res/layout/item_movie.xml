@@ -15,10 +15,11 @@
         android:background="@color/quantum_grey200"
         android:padding="@dimen/_8sdp">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageViewPoster"
             android:layout_width="0dp"
             android:layout_height="140dp"
+            app:shapeAppearanceOverlay="@style/RoundedImageView"
             android:contentDescription="Movie Poster Description"
             android:scaleType="centerCrop"
             tools:src="@drawable/ic_logo"
@@ -73,87 +74,3 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
-
-
-
-    <!--&lt;!&ndash; res/layout/item_movie.xml &ndash;&gt;-->
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:id="@+id/layout_root"-->
-<!--    android:orientation="vertical"-->
-<!--    android:padding="16dp">-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageViewPoster"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="@dimen/_140sdp"-->
-<!--        android:contentDescription="Movie Poster Descrption"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        tools:src="@drawable/ic_logo" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textViewTitle"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        tools:text="Movie Title"-->
-<!--        android:textColor="@color/color_primary"-->
-<!--        android:textSize="20sp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:layout_marginTop="8dp"/>-->
-
-<!--    &lt;!&ndash; Release Date &ndash;&gt;-->
-<!--    <TextView-->
-<!--        android:id="@+id/textViewReleaseDate"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        tools:text="Release Date: 2023-08-02"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textColor="@color/color_primary"-->
-<!--        android:layout_marginTop="4dp"/>-->
-
-<!--    &lt;!&ndash; Movie Overview &ndash;&gt;-->
-<!--    <TextView-->
-<!--        android:id="@+id/textViewOverview"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        tools:text="Movie Overview: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In hac habitasse platea dictumst."-->
-<!--        android:textSize="16sp"-->
-<!--        android:textColor="@color/color_primary"-->
-<!--        android:layout_marginTop="8dp"/>-->
-
-<!--    &lt;!&ndash; Other Movie Information (e.g., Genre, Popularity, Vote Average) &ndash;&gt;-->
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        android:layout_marginTop="8dp">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/textViewGenre"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            tools:text="Genre: Action, Sci-Fi, Horror"-->
-<!--            android:textSize="14sp"-->
-<!--            android:textColor="@color/color_primary"-->
-<!--            android:layout_marginEnd="8dp"/>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/textViewPopularity"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            tools:text="Popularity: 3784.306"-->
-<!--            android:textSize="14sp"-->
-<!--            android:textColor="@color/color_primary"-->
-<!--            android:layout_marginEnd="8dp"/>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/textViewVoteAverage"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            tools:text="Vote Average: 7.0"-->
-<!--            android:textSize="14sp"-->
-<!--            android:textColor="@color/color_primary"/>-->
-<!--    </LinearLayout>-->
-<!--</LinearLayout>-->

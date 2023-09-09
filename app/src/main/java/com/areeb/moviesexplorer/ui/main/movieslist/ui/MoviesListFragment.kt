@@ -38,8 +38,14 @@ class MoviesListFragment : BaseFragment<FragmentMoviesListBinding>() {
         lifecycleScope.launch {
             viewModel.moviesListState.collect{ state ->
                 when (state) {
-                    MoviesListState.Loading -> { }
+                    MoviesListState.Loading -> {
+                        binding.rvMovies.isVisible = false
+                        binding.shimmerLayout.isVisible = true
+                    }
                     is MoviesListState.Success -> {
+                        binding.rvMovies.isVisible = true
+                        binding.shimmerLayout.isVisible = false
+
                         val movies = state.movies
                         when (viewModel.moviesListParams.page) {
                             1 -> {
