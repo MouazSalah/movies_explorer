@@ -1,0 +1,128 @@
+<com.facebook.shimmer.ShimmerFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shimmer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:padding="@dimen/_8sdp">
+
+    <!-- Your existing ConstraintLayout content -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/_8sdp">
+
+        <!-- ImageView -->
+        <ImageView
+            android:id="@+id/imageViewPoster"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:background="@drawable/shimmer_view_radius"
+            android:backgroundTint="@color/color_dark_grey"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Movie Poster Description"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- TextView Title -->
+        <TextView
+            android:id="@+id/textViewTitle"
+            style="@style/MovieTitleStyle"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:backgroundTint="@color/color_dark_grey"
+            android:background="@drawable/shimmer_view_radius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewPoster"
+             />
+
+        <!-- TextView Release Date -->
+        <TextView
+            android:id="@+id/textViewReleaseDate"
+            style="@style/MovieInfoStyle"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:backgroundTint="@color/color_dark_grey"
+            android:background="@drawable/shimmer_view_radius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewTitle"/>
+
+        <!-- TextView Overview -->
+        <TextView
+            android:id="@+id/textViewOverview1"
+            style="@style/MovieOverviewStyle"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:backgroundTint="@color/color_dark_grey"
+            android:background="@drawable/shimmer_view_radius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewReleaseDate"/>
+
+        <TextView
+            android:id="@+id/textViewOverview2"
+            style="@style/MovieOverviewStyle"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_7sdp"
+            android:backgroundTint="@color/color_dark_grey"
+            android:background="@drawable/shimmer_view_radius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewOverview1"/>
+
+
+        <TextView
+            android:id="@+id/textViewOverview3"
+            style="@style/MovieOverviewStyle"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_7sdp"
+            android:backgroundTint="@color/color_dark_grey"
+            android:background="@drawable/shimmer_view_radius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewOverview2"/>
+
+        <!-- TextView Genre -->
+        <TextView
+            android:id="@+id/textViewGenre"
+            style="@style/MovieSubInfoStyle"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:backgroundTint="@color/color_dark_grey"
+            android:background="@drawable/shimmer_view_radius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewOverview3"
+             />
+
+        <!-- TextView Popularity -->
+        <TextView
+            android:id="@+id/textViewPopularity"
+            style="@style/MovieSubInfoStyle"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:backgroundTint="@color/color_dark_grey"
+            android:background="@drawable/shimmer_view_radius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewGenre"
+             />
+
+        <!-- TextView Vote Average -->
+        <TextView
+            android:id="@+id/textViewVoteAverage"
+            style="@style/MovieSubInfoStyle"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:backgroundTint="@color/color_dark_grey"
+            android:background="@drawable/shimmer_view_radius"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewPopularity"
+             />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.facebook.shimmer.ShimmerFrameLayout>
