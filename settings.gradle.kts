@@ -1,17 +1,19 @@
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
+pluginManagement{
+    repositories{
+    google()
+    mavenCentral()
+    gradlePluginPortal()
+    maven(url="https://jitpack.io")
     }
 }
-dependencyResolutionManagement {
+dependencyResolutionManagement{
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
+    repositories{
+    google()
+    mavenCentral()
+    gradlePluginPortal()
+    maven(url="https://jitpack.io")
     }
 }
-
 rootProject.name = "Movies Explorer"
 include(":app")
